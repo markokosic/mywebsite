@@ -1,0 +1,19 @@
+---
+import type { PortfolioData } from '../data/portfolio';
+
+interface Props {
+  data: PortfolioData['beyondCode'];
+  title: string;
+}
+
+const { data, title } = Astro.props;
+---
+
+<section id="beyondcode">
+  <h2>{title}</h2>
+  <ul class="bullet-list">
+    {data.map(item => <li>{item}</li>)}
+  </ul>
+</section>
+
+

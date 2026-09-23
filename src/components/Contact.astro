@@ -1,0 +1,23 @@
+---
+import type { PortfolioData } from '../data/portfolio';
+
+interface Props {
+  data: PortfolioData['contact'];
+  labels: PortfolioData['labels'];
+}
+
+const { data, labels } = Astro.props;
+---
+
+<section id="contact">
+  <h2>{labels.contact}</h2>
+  <ul class="bullet-list">
+    <li>{labels.email}: <a href={`mailto:${data.email}`}>{data.email}</a></li>
+    <li>{labels.github}: <a href={data.github.url} target="_blank" rel="noopener noreferrer">{data.github.handle}</a></li>
+    <li>{labels.linkedin}: <a href={data.linkedin.url} target="_blank" rel="noopener noreferrer">{data.linkedin.handle}</a></li>
+    <li>{labels.resume}: <a href={data.resumeUrl} target="_blank" rel="noopener noreferrer">Download PDF</a></li>
+    <li>{labels.location}: {data.location}</li>
+  </ul>
+</section>
+
+

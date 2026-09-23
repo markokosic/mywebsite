@@ -1,0 +1,29 @@
+---
+import type { PortfolioData } from '../data/portfolio';
+
+interface Props {
+  data: PortfolioData['education'];
+  labels: PortfolioData['labels'];
+}
+
+const { data, labels } = Astro.props;
+---
+
+<section id="education">
+  <h2>{labels.education}</h2>
+  <div class="items">
+    {data.map((edu) => (
+      <div class="education-item">
+        <div class="summary-header">
+          <h3>{edu.degree}</h3>
+          <p class="meta">{edu.institution} | {edu.period} | {edu.location}</p>
+        </div>
+        <div class="content">
+          <ul class="bullet-list">
+            {edu.specializations.map(spec => <li>{spec}</li>)}
+          </ul>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

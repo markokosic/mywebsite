@@ -1,0 +1,77 @@
+---
+import type { PortfolioData } from '../data/portfolio';
+
+interface Props {
+  data: PortfolioData['featuredProjects'];
+  labels: PortfolioData['labels'];
+}
+
+const { data, labels } = Astro.props;
+---
+
+<section id='projects'>
+  <h2>{labels.projects}</h2>
+  <div class='items'>
+    {
+      data.map((project) => (
+        <div class='project-card'>
+          <h3>{project.title}</h3>
+          <p class='meta'>{project.subtitle}</p>
+          <ul class='project-links'>
+            {project.links.map((link) => (
+              <li>
+                <a href={link.url} target='_blank' rel='noopener noreferrer'>
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div class='content'>
+            <ul class='bullet-list'>
+              {project.highlights.map((highlight) => (
+                <li>{highlight}</li>
+              ))}
+            </ul>
+            <p class='tech'>
+              <strong>{labels.tech}:</strong> {project.technologies.join(', ')}
+            </p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .project-card {
+  }
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    list-style: none;
+    padding: 0;
+  }
+  .project-links a {
+    color: var(--foreground);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .project-links a::before {
+    content: '[';
+    margin-right: 0.2rem;
+    color: var(--muted-foreground);
+    font-weight: normal;
+  }
+  .project-links a::after {
+    content: ']';
+    margin-left: 0.2rem;
+    color: var(--muted-foreground);
+    font-weight: normal;
+  }
+  .project-links a:hover {
+    color: var(--primary);
+  }
+</style>

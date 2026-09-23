@@ -1,0 +1,38 @@
+---
+import type { PortfolioData } from '../data/portfolio';
+import Hero from './Hero.astro';
+import Contact from './Contact.astro';
+import Skills from './Skills.astro';
+import Experience from './Experience.astro';
+import Projects from './Projects.astro';
+import Education from './Education.astro';
+import Principles from './Principles.astro';
+import BeyondCode from './BeyondCode.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  data: PortfolioData;
+}
+
+const { data } = Astro.props;
+---
+
+<div class="portfolio-container">
+  <Hero data={data.hero} />
+  <Contact data={data.contact} labels={data.labels} />
+  <Skills data={data.skills} labels={data.labels} />
+  <Experience data={data.experience} labels={data.labels} />
+  <Projects data={data.featuredProjects} labels={data.labels} />
+  <Education data={data.education} labels={data.labels} />
+  <Principles data={data.principles} title={data.labels.principles} />
+  <BeyondCode data={data.beyondCode} title={data.labels.beyondCode} />
+  <Footer data={data.contact} labels={data.labels} />
+</div>
+
+<style>
+  .portfolio-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+</style>

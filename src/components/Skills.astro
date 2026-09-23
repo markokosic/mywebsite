@@ -1,0 +1,47 @@
+---
+import type { PortfolioData } from '../data/portfolio';
+
+interface Props {
+  data: PortfolioData['skills'];
+  labels: PortfolioData['labels'];
+}
+
+const { data, labels } = Astro.props;
+---
+
+<section id='skills'>
+  <h2>{labels.skills}</h2>
+
+  <div class='skills-grid'>
+    <div class='skill-group'>
+      <h3>{labels.backend}</h3>
+      <ul class='bullet-list'>
+        {data.backend.map((skill) => <li>{skill}</li>)}
+      </ul>
+    </div>
+
+    <div class='skill-group'>
+      <h3>{labels.frontend}</h3>
+      <ul class='bullet-list'>
+        {data.frontend.map((skill) => <li>{skill}</li>)}
+      </ul>
+    </div>
+
+    <div class='skill-group'>
+      <h3>{labels.databaseAndDevops}</h3>
+      <ul class='bullet-list'>
+        {data.databaseAndDevops.map((skill) => <li>{skill}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .skill-group {
+  }
+</style>

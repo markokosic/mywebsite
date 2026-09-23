@@ -1,0 +1,92 @@
+---
+import type { PortfolioData } from '../data/portfolio';
+
+interface Props {
+  data: PortfolioData['experience'];
+  labels: PortfolioData['labels'];
+}
+
+const { data, labels } = Astro.props;
+---
+
+<section id='experience'>
+  <h2>{labels.experience}</h2>
+  <div class='items'>
+    {
+      data.map((job, index) => (
+        <details open={index === 0}>
+          <summary>
+            <div class='summary-header'>
+              <div class='title-row'>
+                <h3>
+                  {job.role} - {job.company}
+                </h3>
+                <span class='indicator' />
+              </div>
+              <p class='meta'>
+                {job.period} | {job.location}
+              </p>
+              {job.crunchbase && (
+                <a
+                  class='link crunchbase-link'
+                  href={job.crunchbase}
+                  target='_blank'
+                  onclick='event.stopPropagation()'
+                >
+                  Crunchbase
+                </a>
+              )}
+            </div>
+          </summary>
+          <div class='content'>
+            <ul class='bullet-list'>
+              {job.highlights.map((highlight) => (
+                <li>{highlight}</li>
+              ))}
+            </ul>
+            <p class='tech'>
+              <strong>{labels.tech}:</strong> {job.technologies.join(', ')}
+            </p>
+          </div>
+        </details>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  details {
+  }
+  summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  .title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .indicator {
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 1.3rem;
+    font-family: monospace;
+  }
+  details:not([open]) .indicator::before {
+    content: '[+]';
+  }
+  details[open] .indicator::before {
+    content: '[-]';
+  }
+  .link {
+    font-size: 0.9rem;
+    display: inline-block;
+  }
+  .crunchbase-link {
+    margin-top: 0.2rem;
+  }
+</style>
