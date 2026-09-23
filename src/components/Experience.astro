@@ -18,13 +18,11 @@ const { data, labels } = Astro.props;
           <summary>
             <div class='summary-header'>
               <div class='title-row'>
-                <h3>
-                  {job.role} - {job.company}
-                </h3>
+                <h3>{job.role}</h3>
                 <span class='indicator' />
               </div>
               <p class='meta'>
-                {job.period} | {job.location}
+                {job.company} | {job.period} | {job.location}
               </p>
               {job.crunchbase && (
                 <a

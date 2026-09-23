@@ -57,6 +57,7 @@ export interface EducationItem {
 export interface PortfolioData {
   contact: ContactInfo;
   hero: {
+    location: string;
     greeting: string;
     headline: string;
     bio: string;
@@ -109,6 +110,7 @@ export const portfolioData: Record<Locale, PortfolioData> = {
       availability: 'Available for selected engineering roles',
     },
     hero: {
+      location: 'Vienna, AT (CET)',
       greeting: "Hey, I'm Marko.",
       headline: 'I build fullstack applications that scale.',
       bio: 'Economist turned Software Engineer. I build scalable web applications with Java, Spring Boot, React, and TypeScript — from database to UI.',
@@ -137,9 +139,9 @@ export const portfolioData: Record<Locale, PortfolioData> = {
     experience: [
       {
         role: 'Software Engineer',
-        company: 'Optima Apps',
-        location: 'Vienna / Remote',
-        period: '03/2024 – present',
+        company: 'Optima Apps GmbH',
+        location: 'Vienna, Austria / Remote',
+        period: '03.2024 – present',
         crunchbase: 'https://www.crunchbase.com/organization/optima-apps',
         highlights: [
           'Built an asynchronous reporting feature in Spring Boot for an insurance client, generating Excel exports in the background and dispatching automated emails with the generated files attached to prevent blocking UI requests.',
@@ -160,8 +162,8 @@ export const portfolioData: Record<Locale, PortfolioData> = {
       {
         role: 'Freelance Software Engineer',
         company: 'Freelance',
-        location: 'Vienna',
-        period: '07/2023 – 02/2024',
+        location: 'Vienna, Austria',
+        period: '07.2023 – 02.2024',
         crunchbase: null,
         highlights: [
           'Built and launched production websites for local businesses using Next.js (SSG), achieving 90+ Lighthouse mobile performance scores and high UX responsiveness.',
@@ -268,7 +270,8 @@ export const portfolioData: Record<Locale, PortfolioData> = {
       beyondCode: 'Beyond Code',
       impressumTitle: 'Legal & Privacy',
       impressumText: 'Marko Kosić, Vienna, Austria. Contact: ',
-      privacyText: 'This is a static HTML website. It does not use cookies, trackers, or analytics, and does not collect or store personal data.',
+      privacyText:
+        'This is a static HTML website. It does not use cookies, trackers, or analytics, and does not collect or store personal data.',
     },
   },
   de: {
@@ -287,6 +290,7 @@ export const portfolioData: Record<Locale, PortfolioData> = {
       availability: 'Offen für spannende Software-Engineering-Rollen',
     },
     hero: {
+      location: 'Wien, AT (MEZ)',
       greeting: 'Hi, ich bin Marko.',
       headline: 'Ich entwickle skalierbare Fullstack-Applikationen.',
       bio: 'Vom Ökonomen zum Software Engineer. Ich baue skalierbare Webanwendungen mit Java, Spring Boot, React und TypeScript — von der Datenbank bis zum UI.',
@@ -315,9 +319,9 @@ export const portfolioData: Record<Locale, PortfolioData> = {
     experience: [
       {
         role: 'Software Engineer',
-        company: 'Optima Apps',
-        location: 'Wien / Remote',
-        period: '03/2024 – heute',
+        company: 'Optima Apps GmbH',
+        location: 'Wien, Österreich / Remote',
+        period: '03.2024 – heute',
         crunchbase: 'https://www.crunchbase.com/organization/optima-apps',
         highlights: [
           'Entwicklung einer asynchronen Reporting-Pipeline in Spring Boot für einen Versicherungskunden: Hintergrund-Generierung umfangreicher Excel-Exporte mit automatischem E-Mail-Anhangversand.',
@@ -338,8 +342,8 @@ export const portfolioData: Record<Locale, PortfolioData> = {
       {
         role: 'Freelance Software Engineer',
         company: 'Freelance',
-        location: 'Wien',
-        period: '07/2023 – 02/2024',
+        location: 'Wien, Österreich',
+        period: '07.2023 – 02.2024',
         crunchbase: null,
         highlights: [
           'Konzeption und Launch von performanten Unternehmens-Websites mit Next.js (SSG) bei durchgängigen Google Lighthouse Mobile Scores von 90+.',
@@ -407,14 +411,14 @@ export const portfolioData: Record<Locale, PortfolioData> = {
         degree: 'Bachelor of Arts (BA) in Wirtschaftsberatung',
         institution: 'FH Wiener Neustadt',
         period: '09.2019 – 06.2022',
-        location: 'Wr. Neustadt, Österreich',
+        location: 'Wr. Neustadt',
         specializations: ['Finanzwirtschaft', 'Marktkommunikation & Vertrieb'],
       },
       {
         degree: 'Reife- und Diplomprüfungszeugnis',
         institution: 'BHAK Baden',
         period: '09.2013 – 06.2018',
-        location: 'Baden, Österreich',
+        location: 'Baden bei Wien',
         specializations: ['Informationsmanagement & Informationstechnologie'],
       },
     ],
@@ -446,7 +450,8 @@ export const portfolioData: Record<Locale, PortfolioData> = {
       beyondCode: 'Beyond Code',
       impressumTitle: 'Impressum & Datenschutz',
       impressumText: 'Marko Kosić, Wien, Österreich. Kontakt: ',
-      privacyText: 'Diese Website ist eine rein statische HTML-Seite. Es werden keine Cookies gesetzt, keine Analyse-Tools (Tracker) verwendet und keine personenbezogenen Daten gespeichert.',
+      privacyText:
+        'Diese Website ist eine rein statische HTML-Seite. Es werden keine Cookies gesetzt, keine Analyse-Tools (Tracker) verwendet und keine personenbezogenen Daten gespeichert.',
     },
   },
 };
