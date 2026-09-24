@@ -15,7 +15,7 @@ const currentLang = getLangFromUrl(Astro.url);
   <div class="header-content">
     
     <div class="header-links">
-      <a href={`mailto:${contact.email}`}>{labels.email}</a>
+      <a href={`mailto:${contact.email}`} class="copy-email-btn" data-email={contact.email} data-copied={labels.copied}>{labels.email}</a>
       <a href={contact.github.url} target="_blank" rel="noopener noreferrer">{labels.github}</a>
       <a href={contact.linkedin.url} target="_blank" rel="noopener noreferrer">{labels.linkedin}</a>
       <a href={contact.resumeUrl} target="_blank" rel="noopener noreferrer">CV</a>

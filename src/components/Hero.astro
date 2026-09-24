@@ -1,5 +1,7 @@
 ---
 import type { PortfolioData } from '../data/portfolio';
+import { Image } from 'astro:assets';
+import markoImg from '../assets/marko.jpg';
 
 interface Props {
   data: PortfolioData['hero'];
@@ -9,10 +11,58 @@ const { data } = Astro.props;
 ---
 
 <section id='hero'>
-  <p class='meta' style='margin-bottom: 0.5rem;'>{data.location}</p>
-  <h1>{data.greeting}</h1>
-  <h3>{data.headline}</h3>
+  <div class='hero-header'>
+    <div class='hero-text'>
+      <p class='meta' style='margin-bottom: 0.5rem;'>{data.location}</p>
+      <h1>{data.greeting}</h1>
+      <h3>{data.headline}</h3>
+    </div>
+    <div class='hero-image-wrapper'>
+      <Image
+        src={markoImg}
+        alt='Marko'
+        width={400}
+        quality='max'
+        class='profile-image'
+      />
+    </div>
+  </div>
   <div class='content'>
     {data.about.map((paragraph) => <p>{paragraph}</p>)}
   </div>
 </section>
+
+<style>
+  .hero-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .hero-text {
+    flex: 1;
+  }
+  .hero-image-wrapper {
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+  }
+  .profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 30%;
+    border: 1px solid var(--border);
+  }
+
+  @media (max-width: 600px) {
+    .hero-header {
+      gap: 1rem;
+    }
+    .profile-image {
+      width: 90px;
+      height: 90px;
+    }
+  }
+</style>

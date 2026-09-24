@@ -12,7 +12,7 @@ const { data, title } = Astro.props;
 <section id="principles">
   <h2>{title}</h2>
   <ul class="bullet-list">
-    {data.map(principle => <li>{principle}</li>)}
+    {data.map(principle => <li set:html={principle} />)}
   </ul>
 </section>
 

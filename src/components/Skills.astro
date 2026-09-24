@@ -15,24 +15,37 @@ const { data, labels } = Astro.props;
   <div class='skills-grid'>
     <div class='skill-group'>
       <h3>{labels.backend}</h3>
-      <ul class='bullet-list'>
+      <ul class='skill-tags'>
         {data.backend.map((skill) => <li>{skill}</li>)}
       </ul>
     </div>
 
     <div class='skill-group'>
       <h3>{labels.frontend}</h3>
-      <ul class='bullet-list'>
+      <ul class='skill-tags'>
         {data.frontend.map((skill) => <li>{skill}</li>)}
       </ul>
     </div>
 
     <div class='skill-group'>
       <h3>{labels.databaseAndDevops}</h3>
-      <ul class='bullet-list'>
+      <ul class='skill-tags'>
         {data.databaseAndDevops.map((skill) => <li>{skill}</li>)}
       </ul>
     </div>
+
+    {
+      data.tools && (
+        <div class='skill-group'>
+          <h3>{labels.tools}</h3>
+          <ul class='skill-tags'>
+            {data.tools.map((skill) => (
+              <li>{skill}</li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
   </div>
 </section>
 
@@ -40,8 +53,24 @@ const { data, labels } = Astro.props;
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
   }
-  .skill-group {
+  .skill-group h3 {
+    margin: 0 0 0.75rem 0;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .skill-tags li {
+    padding: 0.2rem 0.8rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    border: 1px solid var(--border);
+    white-space: nowrap;
   }
 </style>

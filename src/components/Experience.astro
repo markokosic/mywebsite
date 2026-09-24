@@ -24,16 +24,6 @@ const { data, labels } = Astro.props;
               <p class='meta'>
                 {job.company} | {job.period} | {job.location}
               </p>
-              {job.crunchbase && (
-                <a
-                  class='link crunchbase-link'
-                  href={job.crunchbase}
-                  target='_blank'
-                  onclick='event.stopPropagation()'
-                >
-                  Crunchbase
-                </a>
-              )}
             </div>
           </summary>
           <div class='content'>
@@ -83,8 +73,5 @@ const { data, labels } = Astro.props;
   .link {
     font-size: 0.9rem;
     display: inline-block;
-  }
-  .crunchbase-link {
-    margin-top: 0.2rem;
   }
 </style>

@@ -11,19 +11,30 @@ const year = new Date().getFullYear();
 ---
 
 <footer>
-  <div class="footer-content">
-    <div class="footer-section">
+  <div class='footer-content'>
+    <div class='footer-section'>
       <p>&copy; {year} Marko Kosić</p>
-      <div class="footer-links">
-        <a href={data.github.url} target="_blank" rel="noopener noreferrer">{labels.github}</a>
+      <div class='footer-links'>
+        <a href={data.github.url} target='_blank' rel='noopener noreferrer'
+          >{labels.github}</a
+        >
         <span>|</span>
-        <a href={data.linkedin.url} target="_blank" rel="noopener noreferrer">{labels.linkedin}</a>
+        <a href={data.linkedin.url} target='_blank' rel='noopener noreferrer'
+          >{labels.linkedin}</a
+        >
       </div>
     </div>
-    
-    <div class="footer-section legal">
+
+    <div class='footer-section legal'>
       <p><strong>{labels.impressumTitle}</strong></p>
-      <p>{labels.impressumText}<a href={`mailto:${data.email}`}>{data.email}</a></p>
+      <p>
+        {labels.impressumText}<a
+          href={`mailto:${data.email}`}
+          class='copy-email-btn'
+          data-email={data.email}
+          data-copied={labels.copied}>{data.email}</a
+        >
+      </p>
       <p>{labels.privacyText}</p>
     </div>
   </div>
@@ -69,3 +80,26 @@ const year = new Date().getFullYear();
     text-decoration: underline;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.copy-email-btn');
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const email = btn.getAttribute('data-email');
+        const copiedText = btn.getAttribute('data-copied');
+        const originalText = btn.innerHTML;
+
+        if (email) {
+          navigator.clipboard.writeText(email).then(() => {
+            btn.innerHTML = copiedText || 'Copied!';
+            setTimeout(() => {
+              btn.innerHTML = originalText;
+            }, 700);
+          });
+        }
+      });
+    });
+  });
+</script>
