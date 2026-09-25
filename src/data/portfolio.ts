@@ -126,7 +126,6 @@ export const portfolioData: Record<Locale, PortfolioData> = {
       about: [
         'I became a software engineer because I realized: good software doesn’t happen by accident. It comes from clean architecture, deliberate decisions, and the ambition to build systems that scale and stay maintainable.',
         'Tech focus: Java, Spring Boot, React, and TypeScript.',
-        'My standard: Not just code that runs — software that lasts.',
       ],
     },
     skills: {
@@ -356,7 +355,6 @@ export const portfolioData: Record<Locale, PortfolioData> = {
       about: [
         'Ich bin Software Engineer geworden, weil ich verstanden habe: Gute Software entsteht nicht durch Zufall. Sie entsteht durch saubere Architektur, durchdachte Entscheidungen und den Anspruch, Systeme zu bauen, die skalieren und wartbar bleiben.',
         'Tech-Fokus: Java, Spring Boot, React und TypeScript.',
-        'Mein Anspruch: Nicht nur Code, der läuft – sondern Software, die hält.',
       ],
     },
     skills: {
