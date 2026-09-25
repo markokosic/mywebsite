@@ -326,7 +326,7 @@ export const portfolioData: Record<Locale, PortfolioData> = {
       principles: 'Principles',
       beyondCode: 'Beyond Code',
       impressumTitle: 'Legal & Privacy',
-      impressumText: 'Marko Kosić, Vienna, Austria. Contact: ',
+      impressumText: 'Contact: ',
       copied: 'Copied!',
       privacyText:
         'This is a static HTML website. It does not use cookies, trackers, or analytics, and does not collect or store personal data.',
@@ -555,7 +555,7 @@ export const portfolioData: Record<Locale, PortfolioData> = {
       principles: 'Prinzipien',
       beyondCode: 'Beyond Code',
       impressumTitle: 'Impressum & Datenschutz',
-      impressumText: 'Marko Kosić, Wien, Österreich. Kontakt: ',
+      impressumText: 'Kontakt: ',
       copied: 'Kopiert!',
       privacyText:
         'Diese Website ist eine rein statische HTML-Seite. Es werden keine Cookies gesetzt, keine Analyse-Tools (Tracker) verwendet und keine personenbezogenen Daten gespeichert.',
