@@ -120,13 +120,13 @@ export const portfolioData: Record<Locale, PortfolioData> = {
     },
     hero: {
       location: 'Vienna, AT (CET)',
-      greeting: "Hey, I'm Marko.",
-      headline:
-        'Self-taught Fullstack Developer — driven by the desire not just to analyze things, but to build them.',
+      greeting: 'Hi, I’m Marko.',
+      headline: 'Software Engineer – Fullstack.',
       bio: '',
       about: [
-        'Today, I work primarily with Java, Spring Boot, React, and TypeScript.',
-        'What drives me: Software that simply works. Fast, clear, straightforward — in the end, a tool someone reaches for every day.',
+        'I became a software engineer because I realized: good software doesn’t happen by accident. It comes from clean architecture, deliberate decisions, and the ambition to build systems that scale and stay maintainable.',
+        'Tech focus: Java, Spring Boot, React, and TypeScript.',
+        'My standard: Not just code that runs — software that lasts.',
       ],
     },
     skills: {
@@ -351,12 +351,12 @@ export const portfolioData: Record<Locale, PortfolioData> = {
     hero: {
       location: 'Wien, AT (MEZ)',
       greeting: 'Hi, ich bin Marko.',
-      headline:
-        'Fullstack-Entwickler, selbst beigebracht – aus dem Wunsch heraus, Dinge nicht nur zu analysieren, sondern selbst zu bauen.',
+      headline: 'Software Engineer – Fullstack.',
       bio: '',
       about: [
-        'Heute arbeite ich vor allem mit Java, Spring Boot, React und TypeScript.',
-        'Was mich antreibt: Software, die einfach funktioniert. Schnell, klar, ohne Umwege – und am Ende ein Werkzeug, das jemand täglich benutzt.',
+        'Ich bin Software Engineer geworden, weil ich verstanden habe: Gute Software entsteht nicht durch Zufall. Sie entsteht durch saubere Architektur, durchdachte Entscheidungen und den Anspruch, Systeme zu bauen, die skalieren und wartbar bleiben.',
+        'Tech-Fokus: Java, Spring Boot, React und TypeScript.',
+        'Mein Anspruch: Nicht nur Code, der läuft – sondern Software, die hält.',
       ],
     },
     skills: {
